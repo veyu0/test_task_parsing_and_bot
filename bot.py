@@ -1,6 +1,6 @@
 import logging
 import pandas as pd
-from aiogram import Bot, Dispatcher, types
+from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import Command
 from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
@@ -27,6 +27,11 @@ async def cmd_start(message: types.Message):
         "Привет! Нажми кнопку, чтобы загрузить файл Excel с данными для парсинга.",
         reply_markup=builder.as_markup(resize_keyboard=True)
     )
+
+# Обработка кнопки Загрузить файл
+@dp.message(F.text == "Загрузить файл")
+async def load_file(message: types.Message):
+    await message.answer("Следующим сообщением отправьте ваш файл Excel.")
 
 
 # Обработка файла
