@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Инициализация бота и диспетчера
-bot = Bot(token="1864328239:AAEHD7aPYmtXqpihP9ggqx-jmakJMh_-g4Y")
+bot = Bot(token="YOUR_TELEGRAM_BOT_TOKEN")
 dp = Dispatcher()
 
 
